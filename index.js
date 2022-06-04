@@ -38,8 +38,11 @@ function download(url, author, title, format) {
 }
 
 function main() {
-  const { url, author, title, format } = getDownloadMsg();
-  download(url, author, title, format);
+  const msg = getDownloadMsg();
+  if (msg) {
+    const { url, author, title, format } = msg;
+    download(url, author, title, format);
+  }
 }
 
 main();
